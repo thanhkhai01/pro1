@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -19,6 +20,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
+		//bool hanging;
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
@@ -41,9 +43,41 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
-
-
-		public void Move(Vector3 move, bool crouch, bool jump)
+        private void Update()
+        {
+			//LedgeGrab();
+        }
+		/*public void LedgeGrab()
+		{
+			if (!m_IsGrounded && !hanging)
+			{
+				RaycastHit downHit;
+				Vector3 lineDownStart = (transform.position + Vector3.up * 1.5f) + transform.forward;
+				Vector3 LineDownEnd = (transform.position + Vector3.up * 0.7f) + transform.forward;
+				Physics.Linecast(lineDownStart, LineDownEnd, out downHit, LayerMask.GetMask("Ground"));
+				Debug.DrawLine(lineDownStart, LineDownEnd);
+				if (downHit.collider != null)
+				{
+					RaycastHit fwdHit;
+					Vector3 LineFwdStart = new Vector3(transform.position.x, downHit.point.y - 0.1f, transform.position.z);
+					Vector3 LineFwdEnd = new Vector3(transform.position.x, downHit.point.y - 0.1f, transform.position.z) + transform.forward;
+					Physics.Linecast(LineFwdStart, LineFwdEnd, out fwdHit, LayerMask.GetMask("Ground"));
+					Debug.DrawLine(LineFwdStart, LineFwdEnd);
+					if (fwdHit.collider != null)
+					{
+						m_Rigidbody.useGravity = false;
+						m_Rigidbody.velocity = Vector3.zero;
+						hanging = true;
+						Vector3 hangPos = new Vector3(fwdHit.point.x, downHit.point.y, fwdHit.point.z);
+						Vector3 offset = transform.forward * -0.1f + transform.up * -1f;
+						hangPos += offset;
+						transform.position = hangPos;
+						transform.forward = -fwdHit.normal;
+					}
+				}
+			}
+		}*/
+        public void Move(Vector3 move, bool crouch, bool jump)
 		{
 
 			// convert the world relative moveInput vector into a local-relative
@@ -184,7 +218,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		public void OnAnimatorMove()
+		/*public void OnAnimatorMove()
 		{
 			// we implement this function to override the default root motion.
 			// this allows us to modify the positional speed before it's applied.
@@ -196,7 +230,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				v.y = m_Rigidbody.velocity.y;
 				m_Rigidbody.velocity = v;
 			}
-		}
+		}*/
 
 
 		void CheckGroundStatus()
