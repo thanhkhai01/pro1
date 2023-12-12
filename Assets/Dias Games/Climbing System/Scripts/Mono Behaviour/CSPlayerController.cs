@@ -124,7 +124,7 @@ namespace DiasGames.Controller
             if (Look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
                 _cinemachineTargetYaw += Look.x * CameraTurnSpeed.x * Time.deltaTime;
-                _cinemachineTargetPitch += Look.y * CameraTurnSpeed.y * Time.deltaTime;
+                _cinemachineTargetPitch -= Look.y * CameraTurnSpeed.y * Time.deltaTime;
             }
 
             // clamp our rotations so our values are limited 360 degrees

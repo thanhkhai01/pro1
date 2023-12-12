@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/pro2-2.unity
+    path: Assets/Map2.unity
     guid: 1ed3d1c6bac58c44daaca8d2014e8b91
   - enabled: 1
-    path: Assets/pro2-2.unity
+    path: Assets/Map2.unity
     guid: 1ed3d1c6bac58c44daaca8d2014e8b91
   - enabled: 0
     path: Assets/Dias Games/Climbing System/Scenes/CS Demo Scene.unity
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Dias Games/Climbing System/Scenes/CS Demo Scene - Mobile.unity
     guid: d7bb7b6e5e26af34baaa950f28b69bf8
   - enabled: 1
-    path: Assets/pro2-1.unity
+    path: Assets/Map1.unity
     guid: d9047cc25234c04459ef527a123f537a
   m_configObjects: {}
