@@ -11,11 +11,14 @@ TagManager:
   - Stone
   - Wood
   - Sand
+  - PW - Prop
+  - PW - Building
+  - PW - Nature
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
   - 
@@ -47,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1953622581
     locked: 0
