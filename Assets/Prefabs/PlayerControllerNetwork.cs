@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerNetwork : NetworkBehaviour
 {
@@ -155,6 +156,11 @@ public class PlayerControllerNetwork : NetworkBehaviour
                 //Neu co Animation thi phai dung animation event de goi ham jump 
                 //playerAnimationController.JumpAnim();
             }
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Map2");
 
         }
 
