@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: ad6ff3c6de692f842aa77419414092cb
   - enabled: 1
-    path: Assets/Scenes/Map2real.unity
+    path: Assets/Scenes/Map2.unity
     guid: d9047cc25234c04459ef527a123f537a
   - enabled: 1
     path: Assets/Scenes/Map1real.unity
     guid: d08b8d13bfa367f4a9905d9b6b2294fe
   - enabled: 0
-    path: Assets/Scenes/Map21.unity
+    path: Assets/Scenes/Map1.unity
     guid: 1ed3d1c6bac58c44daaca8d2014e8b91
   - enabled: 0
     path: Assets/Scenes/finish.unity
