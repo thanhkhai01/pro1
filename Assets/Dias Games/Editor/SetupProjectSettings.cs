@@ -154,8 +154,8 @@ namespace DiasGames.ThirdPersonSystem
             while (axesProperty.Next(false))
             {
                 SerializedProperty axis = axesProperty.Copy();
-                
-                if (axis.Next(true)&&axis.stringValue == axisName) return true;
+                axis.Next(true);
+                if (axis.stringValue == axisName) return true;
             }
             return false;
         }

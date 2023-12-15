@@ -49,7 +49,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Patroling()
     {
-        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsRunning", true);
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -76,14 +76,14 @@ public class EnemyAi : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsRunning", true);
     }
 
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsRunning", false);
         
 
         transform.LookAt(player);
@@ -98,7 +98,7 @@ public class EnemyAi : MonoBehaviour
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
-            animator.SetTrigger("Atacking");
+            animator.SetTrigger("Attack");
         }
     }
     public void AttackCallBack()

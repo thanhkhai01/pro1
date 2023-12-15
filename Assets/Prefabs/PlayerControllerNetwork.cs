@@ -158,7 +158,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene("Map2");
 

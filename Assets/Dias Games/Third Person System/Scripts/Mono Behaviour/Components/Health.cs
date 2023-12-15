@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace DiasGames.Components
 {
-    public class Health : MonoBehaviour //IDamage
+    public class Health : MonoBehaviour, IDamage
     {
         [SerializeField] private int MaxHealthPoints = 100;
         [Space]
@@ -25,7 +25,7 @@ namespace DiasGames.Components
             OnHealthChanged?.Invoke();
         }
 
-        /*public void Damage(int damagePoints)
+        public void Damage(int damagePoints)
         {
             _currentHP -= damagePoints;
 
@@ -37,7 +37,7 @@ namespace DiasGames.Components
             }
 
             OnHealthChanged?.Invoke();
-        }*/
+        }
 
         /// <summary>
         /// Restore an amount of health points
